@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIDS | Berlin Institute for Digital Strategy</title>
     <style>
-        :root { --primary: #0a2540; --accent: #0056b3; --text: #333; --light: #f8f9fa; --meta: #666; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 30px; background-color: #fff; }
+        :root { --primary: #1a1a1a; --accent: #0056b3; --bg: #ffffff; --section-bg: #f9f9f9; --text: #333; --meta: #666; }
+        body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.7; color: var(--text); max-width: 960px; margin: 0 auto; padding: 60px 40px; background-color: var(--bg); }
         
-        header { border-bottom: 2px solid var(--primary); padding-bottom: 20px; margin-bottom: 40px; }
-        .logo-container { display: flex; flex-direction: column; }
-        .logo-main { font-size: 2.6em; font-weight: 900; color: var(--primary); letter-spacing: 2px; line-height: 1; }
-        .logo-sub { font-size: 0.85em; font-weight: 700; color: var(--meta); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 10px; }
+        /* 研究所 Logo：强调学术厚重感 */
+        header { border-bottom: 3px solid var(--primary); padding-bottom: 30px; margin-bottom: 60px; }
+        .logo-main { font-size: 2.8em; font-weight: 800; color: var(--primary); letter-spacing: -1px; line-height: 1; }
+        .logo-sub { font-size: 0.9em; font-weight: 600; color: var(--meta); text-transform: uppercase; letter-spacing: 2px; margin-top: 12px; }
         
-        nav { margin-top: 25px; display: flex; gap: 30px; }
-        nav a { font-weight: 700; text-transform: uppercase; font-size: 0.8em; color: var(--text); text-decoration: none; border-bottom: 2px solid transparent; }
-        nav a:hover { border-bottom: 2px solid var(--accent); }
+        nav { margin-top: 30px; display: flex; gap: 40px; }
+        nav a { font-weight: 700; text-transform: uppercase; font-size: 0.75em; color: var(--text); text-decoration: none; letter-spacing: 1px; }
+        nav a:hover { color: var(--accent); }
 
-        .hero { margin: 80px 0; }
-        .hero h1 { font-size: 2.4em; color: var(--primary); margin-bottom: 25px; letter-spacing: -0.5px; }
-        .hero p { font-size: 1.15em; color: #444; max-width: 800px; text-align: justify; border-left: 5px solid var(--light); padding-left: 25px; }
+        /* 使命宣言：非盈利研究基调 */
+        .hero { margin: 100px 0; border-left: 6px solid var(--primary); padding-left: 35px; }
+        .hero h1 { font-size: 2.2em; color: var(--primary); margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.1em; color: #444; max-width: 850px; text-align: justify; }
 
-        .section-title { font-size: 1.1em; color: var(--primary); border-bottom: 1px solid #eee; padding-bottom: 10px; margin: 60px 0 30px; text-transform: uppercase; letter-spacing: 2px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .card h3 { margin-top: 0; color: var(--primary); font-size: 0.95em; text-transform: uppercase; letter-spacing: 1px; }
-        .card p { font-size: 0.9em; color: #555; line-height: 1.7; }
-
-        .news-item { margin-bottom: 40px; }
-        .news-tag { display: inline-block; font-size: 0.7em; font-weight: 800; color: #fff; background: var(--accent); padding: 2px 8px; border-radius: 2px; text-transform: uppercase; margin-bottom: 10px; }
-        .news-title { display: block; font-size: 1.25em; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .section-title { font-size: 1em; color: var(--primary); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin: 80px 0 40px; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 800; }
         
-        footer { margin-top: 120px; padding: 40px 0; border-top: 3px solid var(--primary); font-size: 0.85em; color: var(--meta); }
-        .contact-box { margin-top: 20px; font-weight: 600; color: var(--primary); }
+        /* 项目列表：强调资助来源与产出 */
+        .project-card { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px dashed #eee; }
+        .project-meta { font-size: 0.8em; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .project-title { font-size: 1.4em; font-weight: 700; color: var(--primary); margin-bottom: 15px; display: block; text-decoration: none; }
+        .project-desc { font-size: 0.95em; color: #555; margin-bottom: 15px; }
+        .funding-tag { font-size: 0.85em; background: var(--section-bg); padding: 5px 12px; border-radius: 4px; border: 1px solid #eee; color: var(--meta); }
+
+        /* 技术方法论 */
+        .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--section-bg); padding: 40px; border-radius: 8px; }
+        .method-item h3 { font-size: 1.1em; color: var(--primary); margin-top: 0; }
+        .method-item p { font-size: 0.9em; color: #666; }
+
+        footer { margin-top: 120px; padding: 60px 0; border-top: 1px solid #eee; font-size: 0.85em; color: var(--meta); }
+        .pi-signature { font-size: 1.2em; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -42,46 +48,58 @@
         <div class="logo-sub">Berlin Institute for Digital Strategy</div>
     </div>
     <nav>
-        <a href="#monitor">Data Monitor</a>
-        <a href="#capabilities">Methods</a>
-        <a href="#contact">Contact</a>
+        <a href="#initiatives">Research Initiatives</a>
+        <a href="#methods">Methodology</a>
+        <a href="#about">About</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Strategic Intelligence for a Complex Digital World.</h1>
-    <p>The <strong>Berlin Institute for Digital Strategy (BIDS)</strong> is an independent research hub providing high-stakes analysis at the intersection of technology, law, and geopolitics. We integrate <strong>computational rigor</strong> with <strong>deep policy expertise</strong> to deliver evidence-based insights on global digital governance and regulatory friction.</p>
+    <h1>Independent Computational Research for Global Digital Governance.</h1>
+    <p>The <strong>Berlin Institute for Digital Strategy (BIDS)</strong> is a research-led initiative dedicated to the systematic auditing of digital norms and geopolitical friction. Operating at the intersection of <strong>International Relations</strong> and <strong>Computational Social Science</strong>, we provide evidence-based insights through large-scale policy monitoring and relational data modeling.</p>
 </section>
 
-<h2 id="capabilities" class="section-title">Our Approach</h2>
-<div class="grid">
-    <div class="card">
-        <h3>Systematic Policy Auditing</h3>
-        <p>Combining expert qualitative assessment with automated text-mining to decode complex regulatory landscapes and strategic shifts in non-Western markets.</p>
+<h2 id="initiatives" class="section-title">Research Initiatives</h2>
+
+<div class="project-card">
+    <span class="project-meta">Ongoing Monitoring | Digital Sovereignty</span>
+    <a href="https://doi.org/10.54148/ELTELJ.2024.2.109" class="project-title">The "Bandung Spirit" in Cyberspace: Leveraging NAM for Digital Norm-Setting</a>
+    <p class="project-desc">Utilizing <strong>NLP-driven policy auditing</strong>, this initiative tracks the discursive alignment between China and the Non-Aligned Movement (NAM). [cite: 1, 390] Our research identifies how anti-hegemonic rhetoric is institutionalized to reshape the global digital order. [cite: 391, 392]</p>
+    <span class="funding-tag">Initially Funded by: Italian Ministry of University and Research (PRIN 2022) </span>
+</div>
+
+<div class="project-card">
+    <span class="project-meta">Comparative Audit | Tech-Geopolitics</span>
+    <span class="project-title">Structural Alignments in Global Technology Ecosystems</span>
+    <p class="project-desc">A systematic audit of regulatory friction in non-Western markets. We analyze the evolving logics of "Data Sovereignty" and their impact on international digital trade and infrastructure.</p>
+    <span class="funding-tag">Research Support: BIDS Independent Methodology Seed</span>
+</div>
+
+<div class="project-card">
+    <span class="project-meta">Archived | Climate & Emerging Economies</span>
+    <span class="project-title">Climate Financing Policy Auditing in BASIC Countries</span>
+    <p class="project-desc">Policy-oriented research focusing on the cooperation of climate financing among major emerging economies. This project established the foundation for BIDS's comparative auditing methodology.</p>
+    <span class="funding-tag">Funded by: China Clean Development Mechanism Fund (CCDMF)</span>
+</div>
+
+<h2 id="methods" class="section-title">Institutional Methodology</h2>
+<div class="methods-grid">
+    <div class="method-item">
+        <h3>Computational Policy Auditing</h3>
+        <p>BIDS maintains proprietary <strong>Python-based pipelines</strong> for multi-lingual policy extraction.  We automate the detection of semantic shifts in official digital strategy documents across jurisdictions.</p>
     </div>
-    <div class="card">
-        <h3>Structural Risk Assessment</h3>
-        <p>Utilizing relational data modeling and network analysis to identify hidden dependencies and institutional alignments in global technology ecosystems.</p>
+    <div class="method-item">
+        <h3>Network Analysis (SNA)</h3>
+        <p>Utilizing relational data modeling to map institutional interdependencies and the diffusion of digital norms within international organizations.</p>
     </div>
 </div>
 
-
-
-<div class="insight-card">
-    <div class="insight-meta">Strategic Briefing | 2024.10</div>
-    <h3>The Bandung Spirit in Cyberspace: Leveraging NAM for Digital Norm-Setting</h3>
-    <p>Using <strong>NLP policy auditing</strong>, BIDS analyzes how China reformulates anti-colonial rhetoric to build a non-Western digital order.</p>
-    <a href="https://heinonline.org/HOL/Page?collection=journals&handle=hein.journals/eltelj2024&id=205&men_tab=srchresults" class="read-more">Read the Briefing →</a>
-</div>
-
-
-<footer id="contact">
-    <div class="contact-box">
-        Grace X. Yang, Principal Investigator
-    </div>
-    <p>Berlin Institute for Digital Strategy (BIDS)</p>
-    <p>Email: <a href="mailto:Graceyang_pro@outlook.com" style="color: var(--accent);">Graceyang_pro@outlook.com</a></p>
-    <p style="margin-top: 30px; opacity: 0.6;">&copy; 2024-2026 BIDS | Berlin, Germany. Independent Intelligence for a Fragmented Digital World.</p>
+<footer id="about">
+    <div class="pi-signature">Grace X. Yang</div>
+    <p><strong>Principal Investigator</strong>, Berlin Institute for Digital Strategy (BIDS)</p>
+    <p>BIDS is an independent, research-led organization committed to open-science principles. We bridge academic rigor with public policy relevance to foster a deeper understanding of the fragmented digital world.</p>
+    <p style="margin-top: 20px;">Contact: <a href="mailto:Graceyang_pro@outlook.com" style="color: var(--accent); text-decoration: none; font-weight: 700;">Graceyang_pro@outlook.com</a></p>
+    <p style="margin-top: 40px; opacity: 0.5;">&copy; 2024-2026 BIDS | Berlin, Germany. All independent research adheres to the ethics of academic inquiry.</p>
 </footer>
 
 </body>
